@@ -24,14 +24,6 @@ def state_to_string(state):
     return f'({state["R1"]} and {state["R2"]}) vs. ({state["R3"]} and {state["R4"]})'
 
 
-def state_equals(state_one, state_two):
-    for racket in RACKETS:
-        if state_one.get(racket, None) != state_two.get(racket, None):
-            return False
-
-    return True
-
-
 def update_game_record(current_state, game_record):
     for player in PLAYERS:
         if player in current_state:
